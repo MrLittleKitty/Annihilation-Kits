@@ -211,7 +211,7 @@ public class Assassin extends SpecialItemKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addWoodShovel().addItem(super.getSpecialItem()).finalizeLoadout();
+		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addWoodShovel().addItem(super.getSpecialItem()).addNavCompass().finalizeLoadout();
 	}
 
 }

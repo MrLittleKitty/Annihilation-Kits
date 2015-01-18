@@ -86,7 +86,7 @@ public class Vampire extends ConfigurableKit
 	protected Loadout getFinalLoadout()
 	{
 		return new Loadout().addStoneSword().addWoodPick().addWoodAxe()
-				.addItem(new Potion(PotionType.NIGHT_VISION).toItemStack(1)).finalizeLoadout();
+				.addItem(new Potion(PotionType.NIGHT_VISION).toItemStack(1)).addNavCompass().finalizeLoadout();
 	}
 
 	@Override
