@@ -98,10 +98,10 @@ public class Assassin extends SpecialItemKit
 		p.setData("Cur", true);
 		player.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY,160,0));
 		player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,160,0));
-		player.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING,160,2));
+		player.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING,160,1));
 		player.getInventory().setArmorContents(null);
 		player.updateInventory();
-		player.setVelocity(player.getLocation().getDirection().setY(.95).multiply(.95));
+		player.setVelocity(player.getLocation().getDirection().setY(1).multiply(.95));
 		new EndLeap(player,p).runTaskLater(AnnihilationMain.getInstance(), 160);
 		return true;
 	}
