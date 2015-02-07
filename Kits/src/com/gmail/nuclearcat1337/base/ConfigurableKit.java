@@ -86,7 +86,7 @@ public abstract class ConfigurableKit extends Kit
 	}
 	
 	@Override
-	public String getName()
+	public String getDisplayName()
 	{
 		return name;
 	}
