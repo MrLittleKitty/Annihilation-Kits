@@ -59,7 +59,7 @@ public class Lumberjack extends ConfigurableKit
 		@Override
 		protected Loadout getFinalLoadout()
 		{
-			return new Loadout().addWoodSword().addWoodPick().addSoulboundEnchantedItem(new ItemStack(Material.STONE_AXE), Enchantment.DIG_SPEED, 1).addNavCompass().finalizeLoadout();
+			return new Loadout().addWoodSword().addWoodPick().addSoulboundEnchantedItem(new ItemStack(Material.STONE_AXE), Enchantment.DIG_SPEED, 1);
 		}
 
 		@Override

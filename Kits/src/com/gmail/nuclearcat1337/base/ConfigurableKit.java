@@ -62,7 +62,7 @@ public abstract class ConfigurableKit extends Kit
 		}
 		icon = getIcon();
 		setUp();
-		this.loadout = getFinalLoadout();
+		this.loadout = getFinalLoadout().addNavCompass().finalizeLoadout();
 		return true;
 	}
 	

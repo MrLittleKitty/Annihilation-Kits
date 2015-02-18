@@ -126,6 +126,6 @@ public class Enchanter extends ConfigurableKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addGoldSword().addWoodPick().addWoodAxe().addNavCompass().finalizeLoadout();
+		return new Loadout().addGoldSword().addWoodPick().addWoodAxe();
 	}
 }

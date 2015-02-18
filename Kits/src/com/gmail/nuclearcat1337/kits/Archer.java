@@ -122,7 +122,7 @@ public class Archer extends ConfigurableKit
 	protected Loadout getFinalLoadout()
 	{
 		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addWoodShovel().addSoulboundEnchantedItem(new ItemStack(Material.BOW),Enchantment.ARROW_DAMAGE, 1)
-				.addSoulboundItem(new ItemStack(Material.ARROW,16)).addHealthPotion1().addNavCompass().finalizeLoadout();
+				.addSoulboundItem(new ItemStack(Material.ARROW,16)).addHealthPotion1();
 	}
 
 	@Override

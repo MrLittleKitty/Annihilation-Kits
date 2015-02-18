@@ -132,7 +132,7 @@ public class Succubus extends ConfigurableKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addItem(this.sucItem).addNavCompass().finalizeLoadout();
+		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addItem(this.sucItem);
 	}
 	
 	@EventHandler(priority = EventPriority.HIGHEST,ignoreCancelled = true)

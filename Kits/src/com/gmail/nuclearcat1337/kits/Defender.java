@@ -107,8 +107,7 @@ public class Defender extends ConfigurableKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addWoodShovel().setUseDefaultArmor(true).setArmor(2,KitUtils.addSoulbound(new ItemStack(Material.CHAINMAIL_CHESTPLATE)))
-				.addNavCompass().finalizeLoadout();
+		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addWoodShovel().setUseDefaultArmor(true).setArmor(2,KitUtils.addSoulbound(new ItemStack(Material.CHAINMAIL_CHESTPLATE)));
 	}
 
 }

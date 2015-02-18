@@ -146,7 +146,7 @@ public class Swapper extends SpecialItemKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addItem(super.getSpecialItem()).addNavCompass().finalizeLoadout();
+		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addItem(super.getSpecialItem());
 	}
 
 	@Override

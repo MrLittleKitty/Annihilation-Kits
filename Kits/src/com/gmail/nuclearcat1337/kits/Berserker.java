@@ -86,7 +86,7 @@ public class Berserker extends ConfigurableKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addHealthPotion1().addNavCompass().finalizeLoadout();
+		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addHealthPotion1();
 	}
 	
 	//TODO---need to implement extra damage when the player has 40% of health or less

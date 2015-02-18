@@ -186,7 +186,7 @@ public class Scout extends ConfigurableKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addGoldSword().addWoodPick().addWoodAxe().addItem(this.grapple).addNavCompass().finalizeLoadout();
+		return new Loadout().addGoldSword().addWoodPick().addWoodAxe().addItem(this.grapple);
 	}
 
 //	@Override

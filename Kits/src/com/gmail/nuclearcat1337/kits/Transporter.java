@@ -139,7 +139,7 @@ public class Transporter extends ConfigurableKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addItem(this.transporterItem).addNavCompass().finalizeLoadout();
+		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addItem(this.transporterItem);
 	}
 	
 	private boolean isTransporterItem(ItemStack stack)

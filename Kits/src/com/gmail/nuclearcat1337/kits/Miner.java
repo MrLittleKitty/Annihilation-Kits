@@ -101,7 +101,7 @@ public class Miner extends ConfigurableKit
 	protected Loadout getFinalLoadout()
 	{
 		return new Loadout().addWoodSword().addSoulboundEnchantedItem(new ItemStack(Material.STONE_PICKAXE), Enchantment.DIG_SPEED, 1).addWoodAxe().addItem(new ItemStack(Material.COAL,4))
-				.addSoulboundItem(new ItemStack(Material.FURNACE)).addNavCompass().finalizeLoadout();
+				.addSoulboundItem(new ItemStack(Material.FURNACE));
 	}
 
 //	@Override

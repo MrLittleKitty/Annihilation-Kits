@@ -13,11 +13,35 @@ public enum Direction
 	SouthWest,
 	SouthEast;
 	
+	public Vector getVector()
+	{
+		switch(this)
+		{
+			case North:
+			default:
+				return new Vector(0,0,-1);
+			case South:
+				return new Vector(0,0,1);
+			case West:
+				return new Vector(-1,0,0);
+			case East:
+				return new Vector(1,0,0);
+			case NorthWest:
+				return new Vector(-1,0,-1);
+			case NorthEast:
+				return new Vector(1,0,-1);
+			case SouthWest:
+				return new Vector(-1,0,1);
+			case SouthEast:
+				return new Vector(1,0,1);
+		}
+	}
+	
 	public static Direction getDirection(Vector vec)
 	{
 		Vector k = vec.normalize();
-		double x = k.getX();
-		double z = k.getZ();
+		int x = k.getBlockX();
+		int z = k.getBlockZ();
 		if(z < 1)
 		{
 			if(x<0)
@@ -66,8 +90,38 @@ public enum Direction
 		}
 	}
 	
+	
 	public static Direction getOpposite(Vector vec)
 	{
 		return Direction.getOpposite(Direction.getDirection(vec));
 	}
+	
+//	public static final BlockFace[] axis = { BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST };
+//    public static final BlockFace[] radial = { BlockFace.NORTH, BlockFace.NORTH_EAST, BlockFace.EAST, BlockFace.SOUTH_EAST, BlockFace.SOUTH, BlockFace.SOUTH_WEST, BlockFace.WEST, BlockFace.NORTH_WEST };
+//	   
+//    /**
+//    * Gets the horizontal Block Face from a given yaw angle<br>
+//    * This includes the NORTH_WEST faces
+//    *
+//    * @param yaw angle
+//    * @return The Block Face of the angle
+//    */
+//    public static BlockFace yawToFace(float yaw) {
+//        return yawToFace(yaw, true);
+//    }
+// 
+//    /**
+//    * Gets the horizontal Block Face from a given yaw angle
+//    *
+//    * @param yaw angle
+//    * @param useSubCardinalDirections setting, True to allow NORTH_WEST to be returned
+//    * @return The Block Face of the angle
+//    */
+//    public static BlockFace yawToFace(float yaw, boolean useSubCardinalDirections) {
+//        if (useSubCardinalDirections) {
+//            return radial[Math.round(yaw / 45f) & 0x7];
+//        } else {
+//            return axis[Math.round(yaw / 90f) & 0x3];
+//        }
+//    }
 }

@@ -144,7 +144,7 @@ public class Pyro extends SpecialItemKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addHealthPotion1().addItem(super.getSpecialItem()).addNavCompass().finalizeLoadout();
+		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addHealthPotion1().addItem(super.getSpecialItem());
 	}
 	
 	//Lites their arrow on fire

@@ -150,7 +150,7 @@ public class Scorpio extends ConfigurableKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addItem(this.hookItem).addNavCompass().finalizeLoadout();
+		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addItem(this.hookItem);
 	}
 	
 	private class HookTracer implements Runnable

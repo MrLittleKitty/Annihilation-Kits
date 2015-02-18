@@ -101,7 +101,7 @@ public class Acrobat extends ConfigurableKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addBow().addSoulboundItem(new ItemStack(Material.ARROW,6)).addNavCompass().finalizeLoadout();
+		return new Loadout().addWoodSword().addWoodPick().addWoodAxe().addBow().addSoulboundItem(new ItemStack(Material.ARROW,6));
 	}
 
 	@Override
