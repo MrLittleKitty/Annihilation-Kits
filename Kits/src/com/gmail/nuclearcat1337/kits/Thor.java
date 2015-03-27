@@ -136,7 +136,7 @@ public class Thor extends SpecialItemKit
 	@Override
 	protected Loadout getFinalLoadout()
 	{
-		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addItem(super.getSpecialItem()).addNavCompass().finalizeLoadout();
+		return new Loadout().addStoneSword().addWoodPick().addWoodAxe().addItem(super.getSpecialItem());
 	}
 
 	@Override
