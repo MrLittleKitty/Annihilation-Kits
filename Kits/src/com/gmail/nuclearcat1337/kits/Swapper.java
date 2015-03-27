@@ -74,7 +74,7 @@ public class Swapper extends SpecialItemKit
 					
 					e.teleport(playerLoc.setDirection(playerLook.normalize()));
 					player.teleport(entityLoc.setDirection(toVec));
-					e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 3, 1));
+					e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 3 * 20, 1));
 					return true;
 				}
 			}	
