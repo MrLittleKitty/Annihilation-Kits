@@ -173,7 +173,7 @@ public class Scout extends ConfigurableKit
 		v.setZ(v_z);
 		e.setVelocity(v);
 
-		//addNoFall(e, 100);
+		NoFallManager.addNoFallDamageNextFall(e, 100);
 	}
 
 	@Override

@@ -205,7 +205,7 @@ public class Scorpio extends ConfigurableKit
 							{
 								target.getWorld().playSound(target.getLocation(), Sound.DOOR_OPEN, 1F, 0.1F);
 								user.getWorld().playSound(user.getLocation(), Sound.DOOR_OPEN, 1F, 0.1F);
-								//plugin.getKits().stopNextFallDamage(target.getName());
+								NoFallManager.addNoFallDamageNextFall(e, 100);
 								Location loc = user.getLocation();
 								Location tele;
 								Direction dec = Direction.getDirection(loc.getDirection());
