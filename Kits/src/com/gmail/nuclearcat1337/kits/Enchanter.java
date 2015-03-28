@@ -7,9 +7,9 @@ import java.util.Random;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.inventory.ItemStack;
 
-import com.gmail.nuclearcat1337.anniPro.anniEvents.AnnihilationEvent;
 import com.gmail.nuclearcat1337.anniPro.anniEvents.ResourceBreakEvent;
 import com.gmail.nuclearcat1337.anniPro.kits.Loadout;
 import com.gmail.nuclearcat1337.base.ConfigurableKit;
@@ -46,8 +46,7 @@ public class Enchanter extends ConfigurableKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"Gain extra exp when gathering",
 					aqua+"resources which enables",
 					aqua+"quicker level succession.",
@@ -55,8 +54,8 @@ public class Enchanter extends ConfigurableKit
 					aqua+"There is a small chance",
 					aqua+"to obtain experience bottles",
 					aqua+"when mining ores and chopping",
-					aqua+"wood.",
-				});
+					aqua+"wood."
+				);
 		return l;
 	}
 
@@ -68,7 +67,7 @@ public class Enchanter extends ConfigurableKit
 	}
 	
 	//Increase the xp gained from mining blocks and potentially gives you an XP bottle (1% chance)
-	@AnnihilationEvent
+	@EventHandler
 	public void onResourceBreak(ResourceBreakEvent event)
 	{
 		if(event.getPlayer().getKit().equals(this))

@@ -434,6 +434,7 @@ class Teleporter
 			w.playEffect(state1.getLocation(), Effect.STEP_SOUND, 153);
 			//w.playSound(state1.getLocation(), sound, volume, pitch) The sound
 			this.state1.update(true);
+            this.state1 = null;
 		}
 		if(state2 != null)
 		{
@@ -441,6 +442,7 @@ class Teleporter
 			w.playEffect(state2.getLocation(), Effect.STEP_SOUND, 153);
 			//w.playSound(state2.getLocation(), sound, volume, pitch) The sound
 			this.state2.update(true);
+            this.state2 = null;
 		}
 	}
 	

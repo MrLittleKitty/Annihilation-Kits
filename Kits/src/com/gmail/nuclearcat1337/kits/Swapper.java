@@ -52,13 +52,12 @@ public class Swapper extends SpecialItemKit
 		return false;
 	}	
 
-	//TODO----Apparently this also switches with teammates
 	@Override
 	protected boolean performSpecialAction(Player player, AnniPlayer p)
 	{
 		if(p.getTeam() != null)
 		{
-			Player e = instance.getPlayerInSightTest(player, 15);
+			Player e = instance.getPlayerInSight(player, 15);
 			if(e != null)
 			{
 				AnniPlayer pl = AnniPlayer.getPlayer(e.getUniqueId());
@@ -74,7 +73,7 @@ public class Swapper extends SpecialItemKit
 					
 					e.teleport(playerLoc.setDirection(playerLook.normalize()));
 					player.teleport(entityLoc.setDirection(toVec));
-					e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 3, 1));
+					e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 3 * 20, 1));
 					return true;
 				}
 			}	
@@ -104,8 +103,7 @@ public class Swapper extends SpecialItemKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"The swapper is able to",
 					aqua+"swap places with a nearby",
 					aqua+"enemy every 20 seconds.",
@@ -122,8 +120,8 @@ public class Swapper extends SpecialItemKit
 					aqua+"to a location or bring",
 					aqua+"yourself to a more advantageous",
 					aqua+"position once held by",
-					aqua+"your enemy.",
-				});
+					aqua+"your enemy."
+				);
 		return l;
 	}
 
@@ -132,16 +130,6 @@ public class Swapper extends SpecialItemKit
 	{
 	}
 
-//	@Override
-//	public void onPlayerSpawn(Player player)
-//	{
-//		KitUtils.giveTeamArmor(player);
-//		player.getInventory().addItem(KitUtils.getWoodSword());
-//		player.getInventory().addItem(KitUtils.getWoodPick());
-//		player.getInventory().addItem(KitUtils.getWoodAxe());
-//		super.giveSpecialItem(player);
-//		player.getInventory().addItem(KitUtils.getNavCompass());
-//	}
 	
 	@Override
 	protected Loadout getFinalLoadout()
@@ -156,70 +144,5 @@ public class Swapper extends SpecialItemKit
 	}
 	
 }
-//	private ItemStack swapperItem;
-//	private String swapperItemName;
-//
-//	@Override
-//	public void Initialize() 
-//	{
-//		ConfigurationSection sec = KitConfig.getInstance().getKitSection("Swapper");
-//		this.loadKitStuff(sec);
-//		this.swapperItemName = sec.getString("SwapperItemName");
-//		this.setIcon(new ItemStack(Material.GREEN_RECORD));
-//		swapperItem = KitUtils.addSoulbound(new ItemStack(Material.GREEN_RECORD));
-//		
-//		ItemMeta meta = swapperItem.getItemMeta();
-//		meta.setDisplayName(swapperItemName+" "+ChatColor.GREEN+"READY");
-//		Delays.getInstance().createNewDelay("Swapper", new StandardItemUpdater(swapperItemName,Material.GREEN_RECORD,new Function<ItemStack,Boolean>(){
-//
-//			@Override
-//			public Boolean apply(ItemStack staack)
-//			{
-//				return isSwapperItem(staack);
-//			}}));
-//		swapperItem.setItemMeta(meta);
-//		
-//	}
-//	
-//	private boolean isSwapperItem(ItemStack stack)
-//	{
-//		if(stack != null && stack.hasItemMeta() && stack.getItemMeta().hasDisplayName())
-//		{
-//			String name = stack.getItemMeta().getDisplayName();
-//			if(name.contains(swapperItemName) && KitUtils.isSoulbound(stack))
-//				return true;
-//		}
-//		return false;
-//	}
-//
-//	//TODO-----Remove
-//	@Override
-//	public boolean hasPermission(Player arg0)
-//	{
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public void cleanup(Player player) 
-//	{
-//
-//	}
-//
-//	@Override
-//	public void onPlayerSpawn(Player player)
-//	{
-//		player.getInventory().addItem(KitUtils.WoodSword);
-//		player.getInventory().addItem(KitUtils.WoodPick);
-//		player.getInventory().addItem(KitUtils.WoodAxe);
-//		player.getInventory().addItem(swapperItem); //Give the record for switching
-//	}
-//	
-//	//TODO---need to implement extra damage when the player has 40% of health or less
-//	
-//	//checks for player death and increments max health
-////	@EventHandler(priority = EventPriority.MONITOR)
-////	public void damageListener(final PlayerDeathEvent event)
-////	{
-////	}
+
 

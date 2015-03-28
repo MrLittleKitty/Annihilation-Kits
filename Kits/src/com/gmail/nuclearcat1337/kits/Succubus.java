@@ -86,8 +86,7 @@ public class Succubus extends ConfigurableKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the hunter.",
 					"",
 					aqua+"Once every 2 minutes the",
@@ -107,8 +106,8 @@ public class Succubus extends ConfigurableKit
 					aqua+"health, the Succubus is",
 					aqua+"dealt the enemy player's",
 					aqua+"remaining health in true",
-					aqua+"damage.",
-				});
+					aqua+"damage."
+				);
 		return l;
 	}
 

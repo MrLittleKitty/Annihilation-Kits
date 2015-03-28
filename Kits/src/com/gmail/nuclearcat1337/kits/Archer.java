@@ -55,8 +55,7 @@ public class Archer extends ConfigurableKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the rain.", 
 					"",
 					aqua+"Obliterate your enemies",
@@ -70,8 +69,8 @@ public class Archer extends ConfigurableKit
 					aqua+"Just put a flint on top",
 					aqua+"of a stick in your crafting",
 					aqua+"interface to create 3",
-					aqua+"arrows!",
-				});
+					aqua+"arrows!"
+				);
 		return l;
 	}
 	

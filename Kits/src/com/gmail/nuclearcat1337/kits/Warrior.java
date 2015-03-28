@@ -50,8 +50,7 @@ public class Warrior extends ConfigurableKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the sword.", 
 					"",
 					aqua+"You deal +1 damage with",
@@ -68,7 +67,7 @@ public class Warrior extends ConfigurableKit
 					aqua+"better gear for you, you",
 					aqua+"will be useless in the",
 					aqua+"late game."
-				});
+				);
 		return l;
 	}
 

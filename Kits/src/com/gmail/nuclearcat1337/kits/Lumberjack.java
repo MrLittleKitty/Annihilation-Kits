@@ -7,9 +7,9 @@ import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.inventory.ItemStack;
 
-import com.gmail.nuclearcat1337.anniPro.anniEvents.AnnihilationEvent;
 import com.gmail.nuclearcat1337.anniPro.anniEvents.ResourceBreakEvent;
 import com.gmail.nuclearcat1337.anniPro.kits.Loadout;
 import com.gmail.nuclearcat1337.base.ConfigurableKit;
@@ -43,16 +43,15 @@ public class Lumberjack extends ConfigurableKit
 		protected List<String> getDefaultDescription()
 		{
 			List<String> l = new ArrayList<String>();
-			addToList(l,new String[]
-				{
+			addToList(l,
 					aqua+"You are the wedge.",
 					"",
 					aqua+"Gather wood with an efficiency",
 					aqua+"axe and with the chance",
 					aqua+"of gaining double yeild,",
 					aqua+"ensuring quick work of",
-					aqua+"any trees in your way.",
-				});
+					aqua+"any trees in your way."
+				);
 			return l;
 		}
 
@@ -68,7 +67,7 @@ public class Lumberjack extends ConfigurableKit
 		}
 		
 		//Does the double loot for logs
-		@AnnihilationEvent
+		@EventHandler
 		public void onResourceBreak(ResourceBreakEvent event)
 		{
 			if(event.getPlayer().getKit().equals(this))

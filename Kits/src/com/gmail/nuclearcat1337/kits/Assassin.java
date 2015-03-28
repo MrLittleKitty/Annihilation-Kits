@@ -171,8 +171,7 @@ public class Assassin extends SpecialItemKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-			{
+		addToList(l,
 				aqua+"Leap over high objects",
 				aqua+"while not taking any fall",
 				aqua+"damage and sneakily take",
@@ -186,8 +185,8 @@ public class Assassin extends SpecialItemKit
 				aqua+"your armor dissapears.",
 				aqua+"However, when you are hit",
 				aqua+"or when you hit someone",
-				aqua+"your armor reappears.",
-			});
+				aqua+"your armor reappears."
+			);
 		return l;
 	}
 

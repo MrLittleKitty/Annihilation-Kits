@@ -14,7 +14,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import com.gmail.nuclearcat1337.anniPro.anniEvents.AnnihilationEvent;
 import com.gmail.nuclearcat1337.anniPro.anniEvents.PlayerKilledEvent;
 import com.gmail.nuclearcat1337.anniPro.anniEvents.PlayerKilledEvent.KillAttribute;
 import com.gmail.nuclearcat1337.anniPro.anniGame.AnniPlayer;
@@ -59,8 +58,7 @@ public class Defender extends ConfigurableKit
 	protected List<String> getDefaultDescription() 
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the last line.",
 					"",
 					aqua+"While around the nexus",
@@ -69,12 +67,12 @@ public class Defender extends ConfigurableKit
 					aqua+"while in the vicinity",
 					aqua+"of the nexus rewards you",
 					aqua+"with extra experience",
-					aqua+"points.",
-				});
+					aqua+"points."
+				);
 		return l;
 	}
 	
-	@AnnihilationEvent(priority = EventPriority.MONITOR)
+	@EventHandler(priority = EventPriority.MONITOR)
 	public void checkXP(PlayerKilledEvent event)
 	{
 		if(event.getKiller().getTeam().equals(this) && event.getAttributes().contains(KillAttribute.NEXUSDEFENSE))

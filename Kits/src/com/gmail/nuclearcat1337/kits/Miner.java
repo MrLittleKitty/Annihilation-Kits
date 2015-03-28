@@ -8,9 +8,9 @@ import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.inventory.ItemStack;
 
-import com.gmail.nuclearcat1337.anniPro.anniEvents.AnnihilationEvent;
 import com.gmail.nuclearcat1337.anniPro.anniEvents.ResourceBreakEvent;
 import com.gmail.nuclearcat1337.anniPro.kits.Loadout;
 import com.gmail.nuclearcat1337.base.ConfigurableKit;
@@ -51,8 +51,7 @@ public class Miner extends ConfigurableKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the hands.", 
 					"",
 					aqua+"Mine precious resources", 
@@ -63,8 +62,8 @@ public class Miner extends ConfigurableKit
 					"",
 					aqua+"Start with an effeciency", 
 					aqua+"pick, 4 coal, and a furnace", 
-					aqua+"to get minerals quicker.", 
-				});
+					aqua+"to get minerals quicker."
+				);
 		return l;
 	}
 
@@ -75,7 +74,7 @@ public class Miner extends ConfigurableKit
 	}
 	
 	//Does the double loot from regenerating resources
-	@AnnihilationEvent
+	@EventHandler
 	public void onResourceBreak(ResourceBreakEvent event)
 	{
 		if(event.getPlayer().getKit().equals(this))

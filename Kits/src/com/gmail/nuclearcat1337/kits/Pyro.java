@@ -97,15 +97,14 @@ public class Pyro extends SpecialItemKit
 	@Override
 	protected ItemStack getIcon()
 	{
-		return new ItemStack(Material.FIRE);
+		return new ItemStack(Material.FLINT_AND_STEEL);
 	}
 
 	@Override
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the flame.",
 					aqua+"",
 					aqua+"You are not afraid of",
@@ -115,8 +114,8 @@ public class Pyro extends SpecialItemKit
 					aqua+"",
 					aqua+"Every hit you land has",
 					aqua+"a chance of igniting your",
-					aqua+"enemy.",
-				});
+					aqua+"enemy."
+				);
 		return l;
 	}
 

@@ -18,6 +18,8 @@ import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.event.player.PlayerFishEvent.State;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 import com.gmail.nuclearcat1337.anniPro.anniGame.AnniPlayer;
@@ -81,8 +83,7 @@ public class Scout extends ConfigurableKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the feet.",
 					"",
 					aqua+"Use your permanent speed",
@@ -90,8 +91,8 @@ public class Scout extends ConfigurableKit
 					aqua+"the battlefield, and your",
 					aqua+"grapple to ascend to new",
 					aqua+"heights and gain perspective",
-					aqua+"on the battlefield.",
-				});
+					aqua+"on the battlefield."
+				);
 		return l;
 	}
 	
@@ -110,27 +111,30 @@ public class Scout extends ConfigurableKit
 	}
 	
 	@EventHandler(priority = EventPriority.NORMAL)
-	public void Grappler(PlayerFishEvent event)
+	public void grappler(PlayerFishEvent event)
 	{
 		Player player = event.getPlayer();
-		if(event.getState() == State.IN_GROUND)
+		if(event.getState() != State.FISHING)
 		{
 			AnniPlayer p = AnniPlayer.getPlayer(player.getUniqueId());
 			if(p != null && p.getKit().equals(this))
 			{
 				if(isGrappleItem(player.getItemInHand()))
 				{
-					//event.getHook().
-					Location playerloc = player.getLocation();
-					Location loc = event.getHook().getLocation();
-					if (playerloc.distance(loc) < 3.0D) 
-				        pullPlayerSlightly(player, loc);
-				    else 
-				        pullEntityToLocation(player, loc);
-//					Vector vec = playerloc.toVector();
-//					Vector vec2 = loc.toVector();
-//					player.setVelocity(vec2.subtract(vec).normalize().multiply(1));
-					player.getItemInHand().setDurability((short)0);
+					Location hookLoc = event.getHook().getLocation().clone().add(0,-1,0);
+                    if(hookLoc.getBlock().getType().isSolid())
+                    {
+                        Location playerloc = player.getLocation();
+                        Location loc = event.getHook().getLocation();
+                        if (playerloc.distance(loc) < 3.0D)
+                            pullPlayerSlightly(player, loc);
+                        else
+                            pullEntityToLocation(player, loc);
+                        //					Vector vec = playerloc.toVector();
+                        //					Vector vec2 = loc.toVector();
+                        //					player.setVelocity(vec2.subtract(vec).normalize().multiply(1));
+                        player.getItemInHand().setDurability((short) 0);
+                    }
 				}
 			}
 		}
@@ -172,15 +176,12 @@ public class Scout extends ConfigurableKit
 		v.setY(v_y);
 		v.setZ(v_z);
 		e.setVelocity(v);
-
-		//addNoFall(e, 100);
 	}
 
 	@Override
 	public void cleanup(Player arg0)
 	{
-		// TODO Auto-generated method stub
-		
+
 	}
 	
 	@Override
@@ -189,15 +190,11 @@ public class Scout extends ConfigurableKit
 		return new Loadout().addGoldSword().addWoodPick().addWoodAxe().addItem(this.grapple);
 	}
 
-//	@Override
-//	public void onPlayerSpawn(Player player)
-//	{
-//		KitUtils.giveTeamArmor(player);
-//		player.getInventory().addItem(KitUtils.getGoldSword());
-//		player.getInventory().addItem(KitUtils.getWoodPick());
-//		player.getInventory().addItem(KitUtils.getWoodAxe());
-//		player.getInventory().addItem(this.grapple.clone());
-//		player.getInventory().addItem(KitUtils.getNavCompass());
-//	}
+	@Override
+	public void onPlayerSpawn(Player player)
+	{
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
+		super.onPlayerSpawn(player);
+	}
 
 }

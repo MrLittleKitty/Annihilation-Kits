@@ -2,6 +2,7 @@ package com.gmail.nuclearcat1337.kits;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gmail.nuclearcat1337.anniPro.utils.DamageControl;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -15,6 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -92,17 +94,16 @@ public class Scorpio extends ConfigurableKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the hook.",
 					"",
 					aqua+"Use your hook to quickly",
 					aqua+"reach allies by pulling",
 					aqua+"yourself to them, or use",
 					aqua+"it on enemies to pull",
-					aqua+"the enemy to you.",
+					aqua+"the enemy to you."
 					
-				});
+				);
 		return l;
 	}
 
@@ -125,7 +126,7 @@ public class Scorpio extends ConfigurableKit
 				{
 					if(!Delays.getInstance().hasActiveDelay(player, this.getInternalName()))
 					{
-						Delays.getInstance().addDelay(player, System.currentTimeMillis()+5000, this.getInternalName());//kits.addDelay(player.getName(), DelayType.SCORPIO, 10, TimeUnit.SECONDS);
+						Delays.getInstance().addDelay(player, System.currentTimeMillis()+8000, this.getInternalName());//kits.addDelay(player.getName(), DelayType.SCORPIO, 10, TimeUnit.SECONDS);
 						Item item = player.getWorld().dropItem(player.getEyeLocation(), new ItemStack(Material.NETHER_STAR,1));
 						item.setPickupDelay(Integer.MAX_VALUE);
 						item.setVelocity(player.getEyeLocation().getDirection().multiply(2));
@@ -205,7 +206,7 @@ public class Scorpio extends ConfigurableKit
 							{
 								target.getWorld().playSound(target.getLocation(), Sound.DOOR_OPEN, 1F, 0.1F);
 								user.getWorld().playSound(user.getLocation(), Sound.DOOR_OPEN, 1F, 0.1F);
-								//plugin.getKits().stopNextFallDamage(target.getName());
+                                DamageControl.addTempImmunity(target, DamageCause.FALL,System.currentTimeMillis()+8000); //8 second fall immunity
 								Location loc = user.getLocation();
 								Location tele;
 								Direction dec = Direction.getDirection(loc.getDirection());

@@ -71,8 +71,7 @@ public class Acrobat extends ConfigurableKit
 	protected List<String> getDefaultDescription()
 	{
 		List<String> l = new ArrayList<String>();
-		addToList(l,new String[]
-				{
+		addToList(l,
 					aqua+"You are the bird.", 
 					"",
 					aqua+"Soar through the air with",
@@ -81,8 +80,8 @@ public class Acrobat extends ConfigurableKit
 					"",
 					aqua+"Your stamina allows you",
 					aqua+"to sprint longer than",
-					aqua+"others.",
-				});
+					aqua+"others."
+				);
 		return l;
 	}
 
